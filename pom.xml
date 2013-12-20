@@ -11,24 +11,18 @@
 			<artifactId>easyogg</artifactId>
 			<version>1.0.0</version>
 			<type>jar</type>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/lib/easyogg.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.jcraft.jogg</groupId>
 			<artifactId>jogg</artifactId>
 			<version>0.0.7</version>
 			<type>jar</type>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/lib/jogg-0.0.7.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.jcraft.jorbis</groupId>
 			<artifactId>jorbis</artifactId>
 			<version>0.0.15</version>
 			<type>jar</type>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/lib/jorbis-0.0.15.jar</systemPath>
 		</dependency>
 	</dependencies>
 	<build>
@@ -44,10 +38,12 @@
 							<goal>shade</goal>
 						</goals>
 						<configuration>
+							<minimizeJar>true</minimizeJar>
 							<artifactSet>
 								<includes>
-									<include>org.newdawn.easyogg:*</include>
-									<include>com.jcraft:*</include>
+									<include>org.newdawn.easyogg:easyogg</include>
+									<include>com.jcraft:jogg</include>
+									<include>jorbis</include>
 								</includes>
 							</artifactSet>
 						</configuration>
