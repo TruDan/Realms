@@ -39,13 +39,6 @@
 						</goals>
 						<configuration>
 							<minimizeJar>true</minimizeJar>
-							<artifactSet>
-								<includes>
-									<include>org.newdawn.easyogg:easyogg</include>
-									<include>com.jcraft:jogg</include>
-									<include>jorbis</include>
-								</includes>
-							</artifactSet>
 						</configuration>
 					</execution>
 				</executions>
