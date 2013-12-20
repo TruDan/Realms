@@ -5,6 +5,12 @@
 	<artifactId>GitRealms</artifactId>
 	<version>0.0.1</version>
 	<name>Realms</name>
+	<repositories>
+		<repository>
+			<id>ooo-maven-repo</id>
+			<url>http://ooo-maven.googlecode.com/hg/repository</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.newdawn.easyogg</groupId>
@@ -13,16 +19,14 @@
 			<type>jar</type>
 		</dependency>
 		<dependency>
-			<groupId>com.jcraft.jogg</groupId>
+			<groupId>com.jcraft</groupId>
 			<artifactId>jogg</artifactId>
 			<version>0.0.7</version>
-			<type>jar</type>
 		</dependency>
 		<dependency>
-			<groupId>com.jcraft.jorbis</groupId>
+			<groupId>org.jcraft</groupId>
 			<artifactId>jorbis</artifactId>
-			<version>0.0.15</version>
-			<type>jar</type>
+			<version>0.0.17</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -39,7 +43,8 @@
 						</goals>
 						<configuration>
 							<transformers>
-								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>net.trudan.realms.Realms</mainClass>
 								</transformer>
 							</transformers>
