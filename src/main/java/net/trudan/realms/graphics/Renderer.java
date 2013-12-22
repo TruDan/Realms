@@ -6,6 +6,7 @@ import java.awt.image.DataBufferInt;
 
 import net.trudan.realms.Realms;
 import net.trudan.realms.entity.Player;
+import net.trudan.realms.graphics.gui.GUI;
 
 public class Renderer {
 
@@ -15,6 +16,8 @@ public class Renderer {
 
 	protected BufferedImage image;
 	protected int[] pixels;
+	protected GUI[] guis = new GUI[64];
+	protected int guiCount = 0;
 
 	public Renderer(Realms realms, Screen screen) {
 		this.realms = realms;
@@ -47,6 +50,11 @@ public class Renderer {
 
 	public void setRenderY(int y) {
 		this.renderY = y;
+	}
+	
+	public void addGUI(GUI gui) {
+		guis[guiCount] = gui;
+		guiCount++;
 	}
 
 }

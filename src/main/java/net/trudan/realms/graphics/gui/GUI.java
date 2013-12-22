@@ -1,5 +1,13 @@
 package net.trudan.realms.graphics.gui;
 
-public class GUI {
+import net.trudan.realms.graphics.Screen;
 
+public class GUI {
+	
+	protected Screen screen;
+
+	public GUI(Screen screen) {
+		this.screen = screen;
+	}
+	
 }

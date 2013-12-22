@@ -21,12 +21,13 @@ public class Realms extends Canvas implements Runnable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public static int width = 300;
+	public static int width = 900;
 	public static int height = width / 16 * 9;
-	public static int scale = 3;
+	public static int scale = 1;
+	public static int tileSize = 32;
 	private Thread thread;
 	private JFrame frame;
-	private Keyboard key;
+	private static Keyboard key;
 	private static Level level;
 	private Player player;
 	private boolean running = false;
@@ -88,7 +89,7 @@ public class Realms extends Canvas implements Runnable {
 
 		requestFocus();
 
-		while (running) {
+		while (running) {			
 			long now = System.nanoTime();
 			delta += (now - lastTime) / ns;
 			lastTime = now;
@@ -116,6 +117,7 @@ public class Realms extends Canvas implements Runnable {
 
 	public void tick() {
 		key.tick();
+		level.tick();
 		player.tick();
 
 		if (key.mup) y--;
@@ -126,14 +128,14 @@ public class Realms extends Canvas implements Runnable {
 		if(player.x-x < 40) {
 			x--;
 		}
-		else if(player.x-x > 250) {
+		else if(player.x-x > 850) {
 			x++;
 		}
 		
 		if(player.y-y < 40) {
 			y--;
 		}
-		else if(player.y-y > 110) {
+		else if(player.y-y > 410) {
 			y++;
 		}
 		
@@ -182,5 +184,9 @@ public class Realms extends Canvas implements Runnable {
 	
 	public int getFPS() {
 		return fps;
+	}
+	
+	public static Keyboard getKeyboard() {
+		return key;
 	}
 }

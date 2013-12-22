@@ -3,10 +3,12 @@ package net.trudan.realms.graphics;
 
 public class Sprite {
 
-	public final int SIZE;
+	public int SIZE;
 	protected int x, y;
 	public int[] pixels;
 	protected SpriteSheet sheet;
+	
+	public static Sprite guiButton = new AdvancedSprite(64,16,0,0,SpriteSheet.gui);
 	
 	public static Sprite playerF = new AnimatedSprite(16,0,1,1,1,10,SpriteSheet.tiles);
 	public static Sprite playerB = new AnimatedSprite(16,0,1,3,3,10,SpriteSheet.tiles);
@@ -30,6 +32,10 @@ public class Sprite {
 		SIZE = size;
 		pixels = new int[SIZE*SIZE];
 		setColour(colour);
+	}
+	
+	protected Sprite() {
+		// do nothing
 	}
 	
 	private void setColour(int colour) {

@@ -63,13 +63,22 @@ public class Screen {
 		this.xOffset = xOffset;
 		this.yOffset = yOffset;
 	}
-	
+
 	public int getWidth() {
 		return width;
 	}
-	
+
 	public int getHeight() {
 		return height;
 	}
 
+	public void renderAdvSprite(int xp, int yp, AdvancedSprite sprite) {
+
+		for (int x = 0; x < sprite.getSizeX(); x++) {
+			for (int y = 0; y < sprite.getSizeY(); y++) {
+				pixels[(x + xp) + (y + yp) * getWidth()] = sprite.getPixels()[x + y * sprite.getSizeX()];
+			}
+		}
+
+	}
 }
