@@ -1,6 +1,6 @@
 package net.trudan.realms.graphics;
 
-import net.trudan.realms.Realms;
+import net.trudan.engine.Engine;
 
 public class AnimatedSprite extends Sprite {
 
@@ -36,8 +36,8 @@ public class AnimatedSprite extends Sprite {
 	}
 
 	public int[] getPixels() {
-		if (Realms.getTick() != prevTick) {
-			prevTick = Realms.getTick();
+		if (Engine.getTick() != prevTick) {
+			prevTick = Engine.getTick();
 			tickCounter++;
 		}
 		if(tickCounter == speed) {

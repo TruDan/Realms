@@ -2,7 +2,7 @@ package net.trudan.realms.sound;
 
 import javax.sound.sampled.Clip;
 
-import net.trudan.realms.Realms;
+import net.trudan.engine.Engine;
 
 import org.newdawn.easyogg.OggClip;
 
@@ -12,7 +12,7 @@ public class BGSound {
 
 	public void play() {
 		try {
-			OggClip ogg = new OggClip(Realms.class.getResourceAsStream("/TownTheme1.ogg"));
+			OggClip ogg = new OggClip(Engine.class.getResourceAsStream("/TownTheme1.ogg"));
 		
 			ogg.loop();
 		} catch(Exception e) {e.printStackTrace();}

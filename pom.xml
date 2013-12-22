@@ -10,6 +10,10 @@
 			<id>ooo-maven-repo</id>
 			<url>http://ooo-maven.googlecode.com/hg/repository</url>
 		</repository>
+		<repository>
+			<id>nifty-maven-repo.sourceforge.net</id>
+			<url>http://nifty-gui.sourceforge.net/nifty-maven-repo</url>
+		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
@@ -22,9 +26,38 @@
 			<artifactId>jorbis</artifactId>
 			<version>0.0.17</version>
 		</dependency>
+		<dependency>
+			<groupId>org.lwjgl.lwjgl</groupId>
+			<artifactId>lwjgl</artifactId>
+			<version>2.9.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.lwjgl.lwjgl</groupId>
+			<artifactId>lwjgl_util</artifactId>
+			<version>2.9.1</version>
+		</dependency>
+		<dependency>
+			<groupId>slick</groupId>
+			<artifactId>slick</artifactId>
+			<version>20121001-264</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>com.googlecode.mavennatives</groupId>
+				<artifactId>maven-nativedependencies-plugin</artifactId>
+				<version>0.0.5</version>
+				<executions>
+					<execution>
+						<id>unpacknatives</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>

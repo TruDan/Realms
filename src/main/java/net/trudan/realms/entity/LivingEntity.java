@@ -1,6 +1,6 @@
 package net.trudan.realms.entity;
 
-import net.trudan.realms.Realms;
+import net.trudan.engine.Engine;
 import net.trudan.realms.graphics.Sprite;
 
 public abstract class LivingEntity extends Entity {
@@ -30,7 +30,7 @@ public abstract class LivingEntity extends Entity {
 		for (int c = 0; c < 4; c++) {
 			int xt = (x + c % 2 * 8 + 4) / 16;
 			int yt = (y + c / 2 * 10 + 6) / 16;
-			if (Realms.getLevel().getTile(xt, yt).isSolid()) return true;
+			if (Engine.getLevel().getTile(xt, yt).isSolid()) return true;
 			if(xt < 0 || yt < 0) return true;
 		}
 		return false;

@@ -3,7 +3,8 @@ package net.trudan.realms.level;
 import java.awt.event.KeyEvent;
 
 
-import net.trudan.realms.Realms;
+
+import net.trudan.engine.Engine;
 import net.trudan.realms.level.tile.Terrain;
 import net.trudan.realms.level.tile.Tile;
 
@@ -34,7 +35,7 @@ public class Level {
 	}
 
 	public void tick() {
-		if(Realms.getKeyboard().getKeys()[KeyEvent.VK_ESCAPE]) {
+		if(Engine.getKeyboard().getKeys()[KeyEvent.VK_ESCAPE]) {
 			if(paused) {
 				paused = false;
 			}
